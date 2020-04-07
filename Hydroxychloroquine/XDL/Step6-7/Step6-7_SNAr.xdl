@@ -1,0 +1,111 @@
+<?xdl version="0.4.0" ?>
+
+<Synthesis>
+  <Hardware>
+    <Component
+      id="cartridge_MgSO4/charcoal"
+      type="cartridge"
+      chemical="MgSO4/charcoal" />
+    <Component
+      id="filter"
+      type="filter" />
+    <Component
+      id="rotavap"
+      type="rotavap" />
+    <Component
+      id="separator"
+      type="separator" />
+  </Hardware>
+
+  <Reagents>
+    <Reagent
+      id="4,7-dichloroquinoline" />
+    <Reagent
+      id="DCM" />
+    <Reagent
+      id="ammonium hydroxide solution" />
+    <Reagent
+      id="methanol" />
+    <Reagent
+      id="phosphoric acid" />
+    <Reagent
+      id="the amine IPA solution" />
+    <Reagent
+      id="water" />
+  </Reagents>
+
+  <Procedure>
+    <Add
+      reagent="4,7-dichloroquinoline"
+      vessel="filter"
+      mass="3.96 g"
+      stir="False" />
+    <Add
+      reagent="the amine IPA solution"
+      vessel="filter"
+      volume="40 mL"
+      stir="True" />
+    <HeatChillToTemp
+      vessel="filter"
+      temp="125°C" />
+    <Stir
+      vessel="filter"
+      time="24 hrs" />
+    <HeatChillToTemp
+      vessel="filter"
+      temp="25°C" />
+    <Add
+      reagent="methanol"
+      vessel="filter"
+      volume="15.8 mL"
+      stir="True" />
+    <Add
+      reagent="phosphoric acid"
+      vessel="filter"
+      volume="2.74 mL"
+      stir="True" />
+    <Filter
+      filter_vessel="filter" />
+    <Add
+      reagent="water"
+      vessel="filter"
+      volume="15 mL"
+      stir="False" />
+    <Dissolve
+      vessel="filter"
+      solvent="ammonium hydroxide solution"
+      volume="12 mL" />
+    <Transfer
+      from_vessel="filter"
+      to_vessel="separator"
+      volume="all" />
+    <Add
+      reagent="water"
+      vessel="separator"
+      volume="5 mL"
+      stir="True" />
+    <Transfer
+      from_vessel="filter"
+      to_vessel="separator"
+      volume="all" />
+    <Separate
+      purpose="extract"
+      from_vessel="separator"
+      separation_vessel="separator"
+      to_vessel="rotavap"
+      product_bottom="True"
+      solvent="DCM"
+      through="MgSO4/charcoal"
+      solvent_volume="80 mL"
+      n_separations="2" />
+    <Evaporate
+      rotavap_name="rotavap"
+      temp="50°C"
+      pressure="370.5 mbar"
+      time="30 mins"
+      mode="auto" />
+    <Dry
+      vessel="rotavap" />
+  </Procedure>
+
+</Synthesis>

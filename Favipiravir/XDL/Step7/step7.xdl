@@ -1,0 +1,89 @@
+<?xdl version="0.4.0" ?>
+
+<Synthesis>
+  <Hardware>
+    <Component
+      id="cartridge_Na2SO4"
+      type="cartridge"
+      chemical="Na2SO4" />
+    <Component
+      id="reactor"
+      type="reactor" />
+    <Component
+      id="rotavap"
+      type="rotavap" />
+    <Component
+      id="separator"
+      type="separator" />
+  </Hardware>
+
+  <Reagents>
+    <Reagent
+      id="a mixture of 1,4-dioxane ( 10 mL ) and water ( 20 mL )" />
+    <Reagent
+      id="brine" />
+    <Reagent
+      id="compound 10" />
+    <Reagent
+      id="ethyl acetate" />
+    <Reagent
+      id="hydrochloric acid" />
+    <Reagent
+      id="sodium bicarbonate" />
+  </Reagents>
+
+  <Procedure>
+    <Add
+      reagent="a mixture of 1,4-dioxane ( 10 mL ) and water ( 20 mL )"
+      vessel="reactor"
+      volume="10 mL"
+      stir="False" />
+    <Add
+      reagent="compound 10"
+      vessel="reactor"
+      mass="1.2 g"
+      stir="True" />
+    <Add
+      reagent="sodium bicarbonate"
+      vessel="reactor"
+      mass="3.8 g"
+      stir="True" />
+    <HeatChill
+      vessel="reactor"
+      temp="60°C"
+      time="8 hrs" />
+    <Add
+      reagent="hydrochloric acid"
+      vessel="reactor"
+      volume="30 mL"
+      stir="True" />
+    <Dry
+      vessel="reactor" />
+    <Separate
+      purpose="extract"
+      from_vessel="reactor"
+      separation_vessel="separator"
+      to_vessel="separator"
+      product_bottom="False"
+      solvent="ethyl acetate"
+      solvent_volume="50 mL"
+      n_separations="2" />
+    <Separate
+      purpose="wash"
+      from_vessel="separator"
+      separation_vessel="separator"
+      to_vessel="rotavap"
+      product_bottom="False"
+      solvent="brine"
+      through="Na2SO4"
+      solvent_volume="10 mL"
+      n_separations="2" />
+    <Evaporate
+      rotavap_name="rotavap"
+      temp="50°C"
+      pressure="42 mbar"
+      time="30 mins"
+      mode="auto" />
+  </Procedure>
+
+</Synthesis>

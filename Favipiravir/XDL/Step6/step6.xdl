@@ -1,0 +1,56 @@
+<?xdl version="0.4.0" ?>
+
+<Synthesis>
+  <Hardware>
+    <Component
+      id="reactor"
+      type="reactor" />
+    <Component
+      id="rotavap"
+      type="rotavap" />
+  </Hardware>
+
+  <Reagents>
+    <Reagent
+      id="THF" />
+    <Reagent
+      id="compound 9 THF solution" />
+    <Reagent
+      id="concentrated hydrochloric acid" />
+  </Reagents>
+
+  <Procedure>
+    <Add
+      reagent="compound 9 THF solution"
+      vessel="reactor"
+      volume="5 mL"
+      stir="False" />
+    <Add
+      reagent="concentrated hydrochloric acid"
+      vessel="reactor"
+      volume="30 mL"
+      stir="True" />
+    <HeatChill
+      vessel="reactor"
+      temp="60°C"
+      time="1.5 hrs" />
+    <HeatChillToTemp
+      vessel="reactor"
+      temp="25°C" />
+    <Transfer
+      from_vessel="reactor"
+      to_vessel="rotavap"
+      volume="all" />
+    <Evaporate
+      rotavap_name="rotavap"
+      temp="50°C"
+      pressure="249 mbar"
+      time="30 mins"
+      mode="auto" />
+    <RunColumn
+      from_vessel="rotavap"
+      to_vessel="reactor"
+      column="column" />
+  </Procedure>
+
+</Synthesis>

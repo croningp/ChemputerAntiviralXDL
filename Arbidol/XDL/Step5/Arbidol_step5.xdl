@@ -1,0 +1,77 @@
+<?xdl version="0.4.0" ?>
+
+<Synthesis>
+  <Hardware>
+    <Component
+      id="reactor"
+      type="reactor" />
+    <Component
+      id="rotavap"
+      type="rotavap" />
+  </Hardware>
+
+  <Reagents>
+    <Reagent
+      id="acetic acid" />
+    <Reagent
+      id="bromo indole derivative dichloromethane solution" />
+    <Reagent
+      id="dichloromethane" />
+    <Reagent
+      id="methanol" />
+    <Reagent
+      id="potassium hydroxide" />
+  </Reagents>
+
+  <Procedure>
+    <Confirm
+      msg="Is Potassium hydroxide ( 763 mg , 3.0 equiv ) in the correct vessel?" />
+    <Dissolve
+      vessel="reactor"
+      solvent="methanol"
+      volume="16 mL" />
+    <HeatChill
+      vessel="reactor"
+      temp="25°C"
+      time="15 mins" />
+    <HeatChillToTemp
+      vessel="reactor"
+      temp="0°C" />
+    <Add
+      reagent="bromo indole derivative dichloromethane solution"
+      vessel="reactor"
+      volume="24 mL"
+      stir="True" />
+    <Stir
+      vessel="reactor"
+      time="3 hrs" />
+    <Add
+      reagent="acetic acid"
+      vessel="reactor"
+      volume="1.2 mL"
+      stir="True" />
+    <Stir
+      vessel="reactor"
+      time="10 mins" />
+    <Transfer
+      from_vessel="reactor"
+      to_vessel="rotavap"
+      volume="all" />
+    <Add
+      reagent="dichloromethane"
+      vessel="reactor"
+      volume="20 mL"
+      stir="False" />
+    <Transfer
+      from_vessel="reactor"
+      to_vessel="rotavap"
+      volume="all" />
+    <Evaporate
+      rotavap_name="rotavap"
+      temp="50°C"
+      pressure="458.5 mbar"
+      time="30 mins"
+      mode="auto" />
+  </Procedure>
+
+</Synthesis>

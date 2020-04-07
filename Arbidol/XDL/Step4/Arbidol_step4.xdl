@@ -1,0 +1,106 @@
+<?xdl version="0.4.0" ?>
+
+<Synthesis>
+  <Hardware>
+   <Component
+      id="buffer_flask_1"
+      type="buffer_flask_1" />
+    <Component
+      id="cartridge_anhydrous MgSO4"
+      type="cartridge"
+      chemical="anhydrous MgSO4" />
+    <Component
+      id="reactor"
+      type="reactor" />
+    <Component
+      id="rotavap"
+      type="rotavap" />
+    <Component
+      id="separator"
+      type="separator" />
+  </Hardware>
+
+  <Reagents>
+    <Reagent
+      id="bromine" />
+    <Reagent
+      id="carbon tetrachloride" />
+    <Reagent
+      id="indole derivative" />
+    <Reagent
+      id="sodium thiosulphate solution" />
+    <Reagent
+      id="water" />
+  </Reagents>
+
+  <Procedure>
+    <Confirm
+      msg="Is 1.0 g of indole derivative in the correct vessel?" />
+    <Dissolve
+      vessel="reactor"
+      solvent="carbon tetrachloride"
+      volume="100 mL" />
+    <Add
+      reagent="bromine"
+      vessel="reactor"
+      volume="0.558 mL"
+      stir="True" />
+    <HeatChill
+      vessel="reactor"
+      temp="85°C"
+      time="16 hrs" />
+    <HeatChillToTemp
+      vessel="reactor"
+      temp="25°C" />
+    <Add
+      reagent="sodium thiosulphate solution"
+      vessel="reactor"
+      volume="100 mL"
+      stir="True" />
+    <Stir
+      vessel="reactor"
+      time="20 mins" />
+    <Transfer
+      from_vessel="reactor"
+      to_vessel="separator"
+      volume="all" />
+    <Add
+      reagent="carbon tetrachloride"
+      vessel="reactor"
+      volume="10 mL"
+      stir="True" />
+    <Transfer
+      from_vessel="reactor"
+      to_vessel="separator"
+      volume="all" />
+    <Separate
+      purpose="extract"
+      from_vessel="separator"
+      separation_vessel="separator"
+      to_vessel="buffer_flask_1"
+      product_bottom="True"
+      solvent="carbon tetrachloride"
+      n_separations="1" />
+    <Transfer
+      from_vessel="buffer_flask_1"
+      to_vessel="separator"
+      volume="all" />
+    <Separate
+      purpose="wash"
+      from_vessel="separator"
+      separation_vessel="separator"
+      to_vessel="rotavap"
+      product_bottom="True"
+      solvent="water"
+      through="anhydrous MgSO4"
+      solvent_volume="100 mL"
+      n_separations="2" />
+    <Evaporate
+      rotavap_name="rotavap"
+      temp="40°C"
+      pressure="40 mbar"
+      time="30 mins"
+      mode="auto" />
+  </Procedure>
+
+</Synthesis>

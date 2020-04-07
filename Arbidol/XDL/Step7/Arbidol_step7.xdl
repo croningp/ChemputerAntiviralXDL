@@ -1,0 +1,56 @@
+<?xdl version="0.4.0" ?>
+
+<Synthesis>
+  <Hardware>
+    <Component
+      id="filter"
+      type="filter" />
+  </Hardware>
+
+  <Reagents>
+    <Reagent
+      id="acetone" />
+    <Reagent
+      id="arbidol" />
+    <Reagent
+      id="concentrated hydrochloric acid" />
+    <Reagent
+      id="acetone_methanol_HCl" />
+  </Reagents>
+
+  <Procedure>
+    <Confirm
+      msg="Is 47.1 g ( 0.098 mole ) of Arbidol in the correct vessel?" />
+    <Dissolve
+      vessel="filter"
+      solvent="acetone"
+      volume="280 mL" />
+    <HeatChillToTemp
+      vessel="filter"
+      temp="60°C" />
+    <Add
+      reagent="concentrated hydrochloric acid"
+      vessel="filter"
+      volume="11 mL"
+      stir="True" />
+    <HeatChillToTemp
+      vessel="filter"
+      temp="10°C" />
+    <Filter
+      filter_vessel="filter" />
+    <Recrystallize
+      vessel="filter" 
+      time="20 mins"
+      dissolve_temp="70°C"
+      solvent="acetone_methanol_HCl"
+      solvent_volume="200 mL"/>
+    <HeatChill
+      vessel="filter"
+      temp="5°C"
+      time="3 hrs"
+      stir="False"/>
+    <Dry
+      vessel="filter" />
+  </Procedure>
+
+</Synthesis>

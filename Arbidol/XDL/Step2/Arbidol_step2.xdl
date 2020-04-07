@@ -1,0 +1,77 @@
+<?xdl version="0.4.0" ?>
+
+<Synthesis>
+  <Hardware>
+    <Component
+      id="filter"
+      type="filter" />
+    <Component
+      id="reactor"
+      type="reactor" />
+    <Component
+      id="rotavap"
+      type="rotavap" />
+  </Hardware>
+
+  <Reagents>
+    <Reagent
+      id="acetone" />
+    <Reagent
+      id="benzoquinone" />
+    <Reagent
+      id="ethyl-3 methyl amino crotonate" />
+  </Reagents>
+
+  <Procedure>
+    <Confirm
+      msg="Is Benzoquinone ( 12.40 g , 0.11 mol ) in the correct vessel?" />
+    <Dissolve
+      vessel="reactor"
+      solvent="acetone"
+      volume="120 mL" />
+    <HeatChillToTemp
+      vessel="reactor"
+      temp="30°C" />
+    <Add
+      reagent="ethyl-3 methyl amino crotonate"
+      vessel="reactor"
+      volume="17.199 mL"
+      dispense_speed="3"
+      stir="True" />
+    <HeatChillToTemp
+      vessel="reactor"
+      temp="25°C" />
+    <Wait
+      time="120 mins" />
+    <Transfer
+      from_vessel="reactor"
+      to_vessel="rotavap"
+      volume="all" />
+    <Evaporate
+      rotavap_name="rotavap"
+      temp="50°C"
+      pressure="370 mbar"
+      time="30 mins"
+      mode="auto" />
+    <Dissolve
+      vessel="rotavap"
+      solvent="acetone"
+      volume="50 mL" />
+    <Transfer
+      from_vessel="rotavap"
+      to_vessel="filter"
+      volume="all" />
+    <Recrystallize
+      vessel="filter" 
+      time="20 mins"
+      dissolve_temp="50°C"
+      solvent="acetone"
+      solvent_volume="10 mL"/>
+    <HeatChill
+      vessel="filter"
+      temp="5°C"
+      time="3 hrs"
+      stir="False"/>
+  </Procedure>
+</Synthesis>
+

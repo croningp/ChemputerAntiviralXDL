@@ -1,0 +1,56 @@
+<?xdl version="0.4.0" ?>
+<Synthesis>
+  <Hardware>
+    <Component
+      id="buffer_flask"
+      type="buffer_flask" />
+    <Component
+      type="filter"
+      id="filter" /> 
+  </Hardware>
+  <Reagents>
+    <Reagent
+      id="bis(dimethylamino)methane" />
+    <Reagent
+      id="dioxane" />
+    <Reagent
+      id="indole derivative" />
+    <Reagent
+      id="water" />
+  </Reagents>
+  <Procedure>
+    <Confirm
+      msg="Is 9.55 g of indole derivative in the correct vessel?" />
+    <Dissolve
+      vessel="filter"
+      solvent="dioxane"
+      volume="59 mL" />
+    <Add
+      reagent="bis(dimethylamino)methane"
+      vessel="filter"
+      volume="6.25 mL"
+      stir="True" />
+    <HeatChill
+      vessel="filter"
+      temp="105°C"
+      time="3 hrs" />
+    <HeatChillToTemp
+      vessel="filter"
+      temp="25°C" />
+    <Add
+      reagent="water"
+      vessel="filter"
+      volume="300 mL"
+      stir="True" />
+    <Filter
+      filter_vessel="filter" />
+    <WashSolid
+      volume="20 mL"
+      solvent="water"
+      vessel="filter"
+      repeat="2" />
+    <Dry
+      vessel="filter" />
+  </Procedure>
+
+</Synthesis>

@@ -1,0 +1,74 @@
+<?xdl version="0.4.0" ?>
+
+<Synthesis>
+  <Hardware>
+    <Component
+      id="cartridge_anhydrous MgSO4"
+      type="cartridge"
+      chemical="anhydrous MgSO4" />
+    <Component
+      id="filter"
+      type="filter" />
+    <Component
+      id="rotavap"
+      type="rotavap" />
+    <Component
+      id="separator"
+      type="separator" />
+  </Hardware>
+
+  <Reagents>
+    <Reagent
+      id="A MeNH2 aqueous solution (40 %)" />
+    <Reagent
+      id="CH2Cl2" />
+    <Reagent
+      id="H2O" />
+    <Reagent
+      id="ethyl acetoacetate" />
+  </Reagents>
+
+  <Procedure>
+    <Add
+      reagent="ethyl acetoacetate"
+      vessel="filter"
+      volume="9.7 mL"
+      stir="False" />
+    <Add
+      reagent="A MeNH2 aqueous solution (40 %)"
+      vessel="filter"
+      volume="19.9 mL"
+      dispense_speed="3"
+      stir="True" />
+    <HeatChill
+      vessel="filter"
+      temp="0 °C"
+      time="3 hrs" />
+    <Add
+      reagent="CH2Cl2"
+      vessel="filter"
+      volume="100 mL"
+      stir="True" />
+    <Add
+      reagent="H2O"
+      vessel="filter"
+      volume="50 mL"
+      stir="True" />
+    <Separate
+      purpose="extract"
+      from_vessel="filter"
+      separation_vessel="separator"
+      to_vessel="rotavap"
+      product_bottom="True"
+      solvent=""
+      through="anhydrous MgSO4"
+      n_separations="1" />
+    <Evaporate
+      rotavap_name="rotavap"
+      temp="30°C"
+      pressure="100 mbar"
+      time="30 mins"
+      mode="auto" />
+  </Procedure>
+
+</Synthesis>

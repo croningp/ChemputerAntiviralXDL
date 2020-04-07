@@ -1,0 +1,94 @@
+<?xdl version="0.4.0" ?>
+
+<Synthesis>
+  <Hardware>
+    <Component
+      id="cartridge_anhydrous Na2SO4,decolorized"
+      type="cartridge"
+      chemical="anhydrous Na2SO4,decolorized" />
+    <Component
+      id="cartridge_celite"
+      type="cartridge"
+      chemical="celite" />
+    <Component
+      id="reactor"
+      type="reactor" />
+    <Component
+      id="rotavap"
+      type="rotavap" />
+    <Component
+      id="separator"
+      type="separator" />
+  </Hardware>
+
+  <Reagents>
+    <Reagent
+      id="2-aminopyrazine acetonitrile solution" />
+    <Reagent
+      id="NCS" />
+    <Reagent
+      id="ethyl acetate" />
+    <Reagent
+      id="saturated aqueous Na2CO3 solution" />
+  </Reagents>
+
+  <Procedure>
+    <HeatChillToTemp
+      vessel="reactor"
+      temp="25°C" />
+    <Add
+      reagent="2-aminopyrazine acetonitrile solution"
+      vessel="reactor"
+      volume="15 mL"
+      stir="False" />
+    <Add
+      reagent="NCS"
+      vessel="reactor"
+      mass="2.59 g"
+      stir="True" />
+    <StopHeatChill
+      vessel="reactor" />
+    <Stir
+      vessel="reactor"
+      time="5 hrs" />
+    <FilterThrough
+      from_vessel="reactor"
+      to_vessel="rotavap"
+      through="celite"
+      eluting_solvent="ethyl acetate"
+      eluting_volume="20 mL"
+      eluting_repeats="2" />
+    <Evaporate
+      rotavap_name="rotavap"
+      temp="50°C"
+      pressure="153 mbar"
+      time="30 mins"
+      mode="auto" />
+    <Add
+      reagent="saturated aqueous Na2CO3 solution"
+      vessel="rotavap"
+      volume="20 mL"
+      stir="False" />
+    <Separate
+      purpose="extract"
+      from_vessel="rotavap"
+      separation_vessel="separator"
+      to_vessel="rotavap"
+      product_bottom="False"
+      solvent="ethyl acetate"
+      through="anhydrous Na2SO4,decolorized"
+      solvent_volume="100 mL"
+      n_separations="1" />
+    <Evaporate
+      rotavap_name="rotavap"
+      temp="50°C"
+      pressure="153 mbar"
+      time="30 mins"
+      mode="auto" />
+    <RunColumn
+      from_vessel="rotavap"
+      to_vessel="reactor"
+      column="column" />
+  </Procedure>
+
+</Synthesis>

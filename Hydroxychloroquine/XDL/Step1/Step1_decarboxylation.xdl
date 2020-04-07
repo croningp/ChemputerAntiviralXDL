@@ -1,0 +1,55 @@
+<?xdl version="0.4.0" ?>
+
+<Synthesis>
+  <Hardware>
+    <Component
+      id="reactor"
+      type="reactor" />
+  </Hardware>
+
+  <Reagents>
+    <Reagent
+      id="acetyl butyrolactone" />
+    <Reagent
+      id="hydrochloric acid" />
+    <Reagent
+      id="sodium chloride" />
+    <Reagent
+      id="water" />
+  </Reagents>
+
+  <Procedure>
+    <Add
+      reagent="sodium chloride"
+      vessel="reactor"
+      mass="20 g"
+      stir="False" />
+    <Add
+      reagent="water"
+      vessel="reactor"
+      volume="100 mL"
+      stir="False" />
+    <Add
+      reagent="hydrochloric acid"
+      vessel="reactor"
+      volume="100 mL"
+      stir="True" />
+    <HeatChillToTemp
+      vessel="reactor"
+      temp="102.5°C" />
+    <Add
+      reagent="acetyl butyrolactone"
+      vessel="reactor"
+      volume="84 mL"
+      dispense_speed="3"
+      stir="True" />
+    <Stir
+      vessel="reactor"
+      time="10 hrs" />
+    <HeatChillToTemp
+      vessel="reactor"
+      temp="25°C" />
+    <Distill />
+  </Procedure>
+
+</Synthesis>

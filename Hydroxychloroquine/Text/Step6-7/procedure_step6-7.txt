@@ -1,0 +1,9 @@
+_Step_6_ (according to Journal of Medicinal Chemistry, 51(7), 1995-1998; 2008)
+A solution of the amine (5.23 g, 30.0 mmol, 1.5 eq) in IPA (40 mL) was added to 4,7-dichloroquinoline (3.96 g, 20.0 mmol, 1.0 eq). the reaction was heated to 125 °C and the IPA was allowed to evaporate at ambient pressure. The reaction was stirred at 125 °C for 24 h. 
+
+_Step_7_
+Then the reaction mixture cooled, methanol (15.8 mL) was added. The clear filtrate was treated with phosphoric acid (2.74 mL). The precipitate was isolated by filtration. The filter cake was dissolved in water (15 mL) and ammonium hydroxide solution (12 mL) and the solution was transferred to a separating funnel. The filter was rinsed with water (5 mL). The resulting liberated quinoline base was extracted with DCM (80 mL x 2). The combined organic phases were dried over MgSO4/charcoal, evaporated and dried.  Melting point is 89 to 91°C. The yield of the product is 130gms (77%).
+
+Original prep. for step 6
+
+A mixture of (100gm) of 4,7-dichloroquinoline of Formula VII, (146gm) of 5-(N-ethyl-N-2-hydroxyethylamino)-2-pentylamine of Formula N, (4.0gm) of potassium iodide 8.0 gm of sodium hydroxide were heated with stirring for 40 to 50 hours at 110 to 115°C.

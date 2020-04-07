@@ -1,0 +1,130 @@
+<?xdl version="0.4.0" ?>
+
+<Synthesis>
+  <Hardware>
+    <Component
+      id="cartridge_MgSO4"
+      type="cartridge"
+      chemical="MgSO4" />
+    <Component
+      id="reactor"
+      type="reactor" />
+    <Component
+      id="rotavap"
+      type="rotavap" />
+    <Component
+      id="separator"
+      type="separator" />
+  </Hardware>
+
+  <Reagents>
+    <Reagent
+      id="1 M aqueous HCl" />
+    <Reagent
+      id="1 M aqueous NaOH" />
+    <Reagent
+      id="DCM" />
+    <Reagent
+      id="MeOH" />
+    <Reagent
+      id="NH4OAc" />
+    <Reagent
+      id="NaBH3CN" />
+    <Reagent
+      id="ketone MeOH solution" />
+  </Reagents>
+
+  <Procedure>
+    <Add
+      reagent="NH4OAc"
+      vessel="reactor"
+      mass="30.6 g"
+      stir="False" />
+    <Add
+      reagent="NaBH3CN"
+      vessel="reactor"
+      mass="18 g"
+      stir="False" />
+    <Add
+      reagent="MeOH"
+      vessel="reactor"
+      volume="714 mL"
+      stir="False" />
+    <Add
+      reagent="ketone MeOH solution"
+      vessel="reactor"
+      volume="178 mL"
+      dispense_speed="10"
+      stir="True" />
+    <HeatChill
+      vessel="reactor"
+      temp="25°C"
+      time="16 hrs" />
+    <Transfer
+      from_vessel="reactor"
+      to_vessel="rotavap"
+      volume="all" />
+    <Evaporate
+      rotavap_name="rotavap"
+      temp="50°C"
+      pressure="218 mbar"
+      time="30 mins"
+      mode="auto" />
+    <Dissolve
+      vessel="rotavap"
+      solvent="DCM"
+      volume="100 mL" />
+    <Transfer
+      from_vessel="rotavap"
+      to_vessel="separator"
+      volume="all" />
+    <Add
+      reagent="DCM"
+      vessel="rotavap"
+      volume="78 mL"
+      stir="True" />
+    <Transfer
+      from_vessel="rotavap"
+      to_vessel="separator"
+      volume="all" />
+    <Add
+      reagent="1 M aqueous HCl"
+      vessel="separator"
+      volume="89 mL"
+      stir="True" />
+    <Stir
+      vessel="separator"
+      time="5 mins"
+      stir_speed="600 RPM" />
+    <Add
+      reagent="1 M aqueous NaOH"
+      vessel="separator"
+      volume="107 mL"
+      dispense_speed="10"
+      stir="True" />
+    <Stir
+      vessel="separator"
+      time="5 mins"
+      stir_speed="600 RPM" />
+    <Separate
+      purpose="extract"
+      from_vessel="separator"
+      separation_vessel="separator"
+      to_vessel="rotavap"
+      product_bottom="True"
+      solvent=""
+      through="MgSO4"
+      n_separations="1" />
+    <Evaporate
+      rotavap_name="rotavap"
+      temp="50°C"
+      pressure="458.5 mbar"
+      time="30 mins"
+      mode="auto" />
+    <Dry
+      vessel="rotavap"
+      time="30 mins"
+      temp="50°C" />
+  </Procedure>
+
+</Synthesis>

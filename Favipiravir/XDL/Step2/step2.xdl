@@ -1,0 +1,93 @@
+<?xdl version="0.4.0" ?>
+
+<Synthesis>
+  <Hardware>
+    <Component
+      id="cartridge_anhydrous Na2SO4,decolorized"
+      type="cartridge"
+      chemical="anhydrous Na2SO4,decolorized" />
+    <Component
+      id="reactor"
+      type="reactor" />
+    <Component
+      id="rotavap"
+      type="rotavap" />
+    <Component
+      id="separator"
+      type="separator" />
+  </Hardware>
+
+  <Reagents>
+    <Reagent
+      id="NBS" />
+    <Reagent
+      id="compound 17" />
+    <Reagent
+      id="dichloromethane" />
+    <Reagent
+      id="saturated aqueous Na2CO3 solution" />
+    <Reagent
+      id="water" />
+  </Reagents>
+
+  <Procedure>
+    <Confirm
+      msg="Is 17 ( 1.1 g , 8.5 mmol ) in the correct vessel?" />
+    <Dissolve
+      vessel="reactor"
+      solvent="dichloromethane"
+      volume="25 mL" />
+    <HeatChillToTemp
+      vessel="reactor"
+      temp="25°C" />
+    <Add
+      reagent="compound 17"
+      vessel="reactor"
+      mass="1.1 g"
+      time="15 mins"
+      stir="True" />
+    <Add
+      reagent="NBS"
+      vessel="reactor"
+      mass="1.52 g"
+      time="15 mins"
+      stir="True" />
+    <StopHeatChill
+      vessel="reactor" />
+    <Add
+      reagent="saturated aqueous Na2CO3 solution"
+      vessel="reactor"
+      volume="10 mL"
+      stir="True" />
+    <Add
+      reagent="water"
+      vessel="reactor"
+      volume="100 mL"
+      stir="True" />
+    <Stir
+      vessel="reactor"
+      time="10 mins" />
+    <Add
+      reagent="water"
+      vessel="reactor"
+      volume="100 mL"
+      stir="True" />
+    <Separate
+      purpose="extract"
+      from_vessel="reactor"
+      separation_vessel="separator"
+      to_vessel="rotavap"
+      product_bottom="True"
+      solvent="dichloromethane"
+      through="anhydrous Na2SO4,decolorized"
+      solvent_volume="100 mL"
+      n_separations="1" />
+    <Evaporate
+      rotavap_name="rotavap"
+      temp="50°C"
+      pressure="370.5 mbar"
+      time="30 mins"
+      mode="auto" />
+  </Procedure>
+
+</Synthesis>

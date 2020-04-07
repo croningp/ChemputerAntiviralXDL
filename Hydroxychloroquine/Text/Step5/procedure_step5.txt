@@ -1,0 +1,9 @@
+A reactor was charged with NH4OAc (30.6 g, 393 mmol, 15.7 eq), NaBH3CN (18.0 g, 286 mmol, 11.4 eq) and MeOH (714 mL). Then a solution of ketone (4.38 g, 25 mmol, 1.00 eq) in MeOH (178 mL) was added slowly. The reaction mixture was then stirred at room temperature overnight. The MeOH was evaporated in vacuo. The crude product was dissolved in DCM (100 mL) and transferred to a separator. The rotavap was rinsed with DCM (78 mL). 1 M aq HCl (89 mL) was added and the mixture was vigorously stirred for 5 min. Then 1 M aq NaOH (107 mL) was added slowly and the mixture was stirred vigorously for 5 min. The phases were separated and the organic phase was dried over MgSO4 and concentrated in vacuo. 
+
+
+(Source: Journal of Medicinal Chemistry, 50(18), 4261-4264; 2007)
+
+
+
+__Original procedure__
+The 1-(N-ethyl-N-2hydroxyethylamino)-4-pentanone of Formula 1N (100gm) was diluted with ammonical methanol (400ml) and reduced catalytically with Raney Nickel (5gm) at 40°C to 80°C using 15 to 20 kg hydrogen pressure in 4 to 5 hours. After completion of the reaction, catalyst was filtered and methanol was distilled out at atmospheric pressure, fractionally distilling Formula V to yield 80gm pure 5-(N-ethyl-N-2-hydroxyethyl amino)-2-pentylamine.

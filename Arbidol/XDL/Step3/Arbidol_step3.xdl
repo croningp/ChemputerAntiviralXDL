@@ -1,0 +1,108 @@
+<?xdl version="0.4.0" ?>
+
+<Synthesis>
+  <Hardware>
+    <Component
+      id="buffer_flask_1"
+      type="buffer_flask_1" />
+    <Component
+      id="buffer_flask_2"
+      type="buffer_flask_2" />
+    <Component
+      id="cartridge_anhydrous MgSO4"
+      type="cartridge"
+      chemical="anhydrous MgSO4" />
+    <Component
+      id="reactor"
+      type="reactor" />
+    <Component
+      id="rotavap"
+      type="rotavap" />
+    <Component
+      id="separator"
+      type="separator" />
+  </Hardware>
+
+  <Reagents>
+    <Reagent
+      id="acetic anhydride" />
+    <Reagent
+      id="aqueous saturated sodium bicarbonate" />
+    <Reagent
+      id="ethyl acetate" />
+    <Reagent
+      id="indole derivative" />
+    <Reagent
+      id="pyridine" />
+    <Reagent
+      id="water" />
+  </Reagents>
+
+  <Procedure>
+    <Confirm
+      msg="Is 3 g of indole derivative in the correct vessel?" />
+    <Dissolve
+      vessel="reactor"
+      solvent="pyridine"
+      volume="3.1 mL" />
+    <Add
+      reagent="acetic anhydride"
+      vessel="reactor"
+      volume="24.3 mL"
+      stir="True" />
+    <HeatChillToTemp
+      vessel="reactor"
+      temp="150°C" />
+    <Wait
+      time="60 mins" />
+    <HeatChillToTemp
+      vessel="reactor"
+      temp="25°C"
+      active="False"
+      continue_heatchill="False" />
+    <Add
+      reagent="ethyl acetate"
+      vessel="reactor"
+      volume="40 mL"
+      stir="True" />
+    <Separate
+      purpose="wash"
+      from_vessel="reactor"
+      separation_vessel="separator"
+      to_vessel="buffer_flask_1"
+      product_bottom="False"
+      solvent="aqueous saturated sodium bicarbonate"
+      solvent_volume="40 mL"
+      n_separations="1"
+      waste_phase_to_vessel="buffer_flask_2" />
+    <Separate
+      purpose="extract"
+      from_vessel="buffer_flask_2"
+      separation_vessel="separator"
+      to_vessel="buffer_flask_1"
+      product_bottom="False"
+      solvent="ethyl acetate"
+      solvent_volume="40 mL"
+      n_separations="2" 
+      waste_phase_to_vessel="buffer_flask_2" />
+    <Transfer
+      from_vessel="buffer_flask_1"
+      to_vessel="separator"
+      volume="all" />
+    <Separate
+      purpose="wash"
+      from_vessel="separator"
+      separation_vessel="separator"
+      to_vessel="rotavap"
+      product_bottom="False"
+      solvent="water"
+      through="anhydrous MgSO4"
+      solvent_volume="40 mL"
+      n_separations="1" />
+    <Evaporate
+      rotavap_name="rotavap"
+      time="30 mins"
+      mode="auto" />
+  </Procedure>
+
+</Synthesis>

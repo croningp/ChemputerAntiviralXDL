@@ -1,0 +1,62 @@
+<?xdl version="0.4.0" ?>
+
+<Synthesis>
+  <Hardware>
+    <Component
+      id="buffer_flask"
+      type="buffer_flask" />
+    <Component
+      id="reactor"
+      type="reactor" />
+    <Component
+      id="separator"
+      type="separator" />
+  </Hardware>
+
+  <Reagents>
+    <Reagent
+      id="50 % aqueous NaOH" />
+    <Reagent
+      id="concentrated hydrochloric acid" />
+    <Reagent
+      id="ketal" />
+    <Reagent
+      id="water" />
+  </Reagents>
+
+  <Procedure>
+    <Add
+      reagent="ketal"
+      vessel="reactor"
+      mass="100 g"
+      stir="False" />
+    <Add
+      reagent="water"
+      vessel="reactor"
+      volume="100 mL"
+      stir="False" />
+    <Add
+      reagent="concentrated hydrochloric acid"
+      vessel="reactor"
+      volume="10 mL"
+      stir="True" />
+    <HeatChill
+      vessel="reactor"
+      temp="35°C"
+      time="4.5 hrs" />
+    <Add
+      reagent="50 % aqueous NaOH"
+      vessel="reactor"
+      volume="10 mL"
+      stir="True" />
+    <Separate
+      purpose="extract"
+      from_vessel="reactor"
+      separation_vessel="separator"
+      to_vessel="buffer_flask"
+      product_bottom="False"
+      solvent=""
+      n_separations="1" />
+  </Procedure>
+
+</Synthesis>

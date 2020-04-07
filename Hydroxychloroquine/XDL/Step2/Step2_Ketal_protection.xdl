@@ -1,0 +1,73 @@
+<?xdl version="0.4.0" ?>
+
+<Synthesis>
+  <Hardware>
+    <Component
+      id="buffer_flask"
+      type="buffer_flask" />
+    <Component
+      id="reactor"
+      type="reactor" />
+    <Component
+      id="separator"
+      type="separator" />
+  </Hardware>
+
+  <Reagents>
+    <Reagent
+      id="1-chloro-4-pentanone" />
+    <Reagent
+      id="cyclohexane" />
+    <Reagent
+      id="ethylene glycol" />
+    <Reagent
+      id="para-toluene sulphonic acid" />
+    <Reagent
+      id="water" />
+  </Reagents>
+
+  <Procedure>
+    <Add
+      reagent="para-toluene sulphonic acid"
+      vessel="reactor"
+      mass="1 g"
+      stir="False" />
+    <Add
+      reagent="ethylene glycol"
+      vessel="reactor"
+      volume="36 mL"
+      stir="False" />
+    <Add
+      reagent="cyclohexane"
+      vessel="reactor"
+      volume="160 mL"
+      stir="True" />
+    <Add
+      reagent="1-chloro-4-pentanone"
+      vessel="reactor"
+      volume="76 mL"
+      stir="True" />
+    <HeatChill
+      vessel="reactor"
+      temp="85°C"
+      time="22.5 hrs" />
+    <HeatChillToTemp
+      vessel="reactor"
+      temp="25°C" />
+    <Add
+      reagent="water"
+      vessel="reactor"
+      volume="40 mL"
+      stir="True" />
+    <Separate
+      purpose="extract"
+      from_vessel="reactor"
+      separation_vessel="separator"
+      to_vessel="buffer_flask"
+      product_bottom="False"
+      solvent=""
+      n_separations="1" />
+    <Distill />
+  </Procedure>
+
+</Synthesis>
