@@ -1,3 +1,3 @@
-# Covid19AntiviralXDL
+# ChemputerAntiviralXDL
 
-Repository to hold all Chemputer/XDL related information on Covid-19 Antiviral targets
+Repository to hold all Chemputer/XDL related information on Antiviral targets
